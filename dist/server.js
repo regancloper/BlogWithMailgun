@@ -86,18 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/server/config/development.ts":
-/*!******************************************!*\
-  !*** ./src/server/config/development.ts ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nexports.default = {\n    mysql: {\n        connectionLimit: 10,\n        user: 'bloguser',\n        password: 'password1',\n        host: 'localhost',\n        database: 'new_blog'\n    },\n    auth: {\n        secret: 'pluto'\n    }\n};\n\n\n//# sourceURL=webpack:///./src/server/config/development.ts?");
-
-/***/ }),
-
 /***/ "./src/server/config/index.ts":
 /*!************************************!*\
   !*** ./src/server/config/index.ts ***!
@@ -106,7 +94,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nexport
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nexports.default = __webpack_require__(/*! ./development */ \"./src/server/config/development.ts\").default;\n\n\n//# sourceURL=webpack:///./src/server/config/index.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n// export default require(`./${process.env.NODE_ENV}`).default;\nvar dotenv = __webpack_require__(/*! dotenv */ \"dotenv\");\ndotenv.config();\nexports.default = {\n    mysql: {\n        connectionLimit: 10,\n        user: process.env.DB_USER,\n        password: process.env.DB_PASS,\n        host: process.env.DB_HOST,\n        database: process.env.DB_SCHEMA\n    },\n    auth: {\n        secret: process.env.SECRET\n    }\n};\n\n\n//# sourceURL=webpack:///./src/server/config/index.ts?");
 
 /***/ }),
 
