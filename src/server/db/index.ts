@@ -8,6 +8,8 @@ import Tokens from './queries/tokens';
 import Blogtags from './queries/blogtags';
 
 // node - mysql connection pool
+console.log(config.mysql);
+
 export const pool = mysql.createPool(config.mysql);
 
 // resusable query helper method
