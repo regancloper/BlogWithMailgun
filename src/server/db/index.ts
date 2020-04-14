@@ -1,5 +1,5 @@
 import * as mysql from 'mysql';
-import config from '../config/production';
+import config from '../config';
 
 // table query imports
 import Blogs from './queries/blogs';

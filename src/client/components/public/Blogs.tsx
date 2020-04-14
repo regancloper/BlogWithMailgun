@@ -27,6 +27,8 @@ class Blogs extends React.Component<IAppProps, IAppState> {
 
     render() {
 
+        console.log(process.env.NODE_ENV);
+
         if (this.props.location.state) {
             this.alert = <div className="alert alert-success p-1 m-3" role="alert">
                 {this.props.location.state.confirmation}
