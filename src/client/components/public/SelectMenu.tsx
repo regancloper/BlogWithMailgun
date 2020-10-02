@@ -1,8 +1,8 @@
 import React from 'react';
 
 
-const SelectMenu = (props: any) => {
-    let tags = props.tags.map((tag: Tag) => {
+const SelectMenu: React.FC<SelectMenuProps> = (props) => {
+    let tags = props.tags.map(tag => {
         return (
             <option key={tag.id} value={tag.name}>{tag.name}</option>
         );
@@ -15,6 +15,10 @@ const SelectMenu = (props: any) => {
         </React.Fragment>
     );
 };
+
+interface SelectMenuProps {
+    tags: Tag[];
+}
 
 
 interface Tag {
